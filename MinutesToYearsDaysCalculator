@@ -1,0 +1,35 @@
+package Java.P;
+
+public class MinutesToYearsDaysCalculator {
+    public static void  printYearsAndDays(long minutes){
+        if (minutes<0){
+            System.out.println("Invalid Value");
+        }
+        else {
+            //days = hours ÷ 24
+            // n minits = n/ 525600 = year
+            // n minits --> day = minits / 1440
+            /*525600 /525600=1
+            * 525600%525600=0 so that the remining minutes =0 we have diffrent input so we have to make it from 365 or less
+            * 0/1440 = 0 so thats how many days in 525600
+            *  */
+
+            long years=minutes/525600;
+            long remaningMinits=minutes%525600;
+            long days=remaningMinits/1440;
+
+            System.out.println(minutes + " min = " + years + " y and " + days+ " d");
+
+        }
+
+    }
+      public static void main(String[] args) {
+
+      printYearsAndDays(525600);
+      printYearsAndDays(1051200);
+      printYearsAndDays(561600);
+      printYearsAndDays(1440);
+
+
+    }
+}
